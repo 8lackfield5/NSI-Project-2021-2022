@@ -1,7 +1,7 @@
 # Projet de NSI (2021-2022): Jeu sous Python
 Collaborateurs: Remi K-S et Nathan D
 
-Lien de l'environnement IDE de Python en ligne: https://replit.com/@8lackfield5/NSI-Project#main.py ET si le premier lien ne marche pas: https://replit.com/join/xczalmmhdt-ndd7
+Lien de l'environnement IDE de Python en ligne: https://replit.com/@RemiK-S/NSI-Project-2021-2022-Remi-K-S-et-Nathan-D#main.py ET si le premier lien ne marche pas: https://replit.com/join/xczalmmhdt-ndd7
 
 ⚠ Voir "Instructions du jeu" à la fin de ce fichier README
 

@@ -86,9 +86,10 @@ cosmo1 = player(45, 541, 64, 64) #coordonée et taille du sprite
 ##------------------------------------##
 ##------------------------------------##
 
-class enemy(object):
+class enemy(pygame.sprite.Sprite):
   
   def __init__(self, x, y, width, height, end):
+        super().__init__()
         self.x = x
         self.y = y
         self.width = width
@@ -98,6 +99,8 @@ class enemy(object):
         self.vel = 0
         self.hitbox = (self.x, self.y + 7, 64, 92)
         self.image = base_spike1
+        self.rect = base_spike1[0]
+
 
         
 
@@ -132,10 +135,9 @@ class enemy(object):
 
   def hit(self): 
     print("hit")   
-spike1 = enemy(505, 501, 64, 64, 402) 
 
 
-class spikes(pygame.sprite.Sprite):
+class spikes(enemy):
   def __init__(self,pos,size):
     super().__init__()
     #self.image = enemy(505, 501, 64, 64, 402)
@@ -208,7 +210,7 @@ class Level: # creation du niveau
   
 level = Level(maplen, win) # maplen = le layout de la carte ; 
 
-
+spike1 = enemy(505, 501, 64, 64, 402)
 def redrawGameWindow() : #ouvre la fenetre win avec le sprite 
   cosmo1.draw(win)
   spike1.draw(win)
@@ -232,10 +234,7 @@ while run:
             run = False
 
 
-    for movements in movement:               # valeur de y    valeur de height
-      if cosmo1.y < spike1.hitbox[1]  + spike1.hitbox[3] and cosmo1.y > spike1.hitbox[1]: #x
-        if cosmo1.x > spike1.hitbox[0] and cosmo1.x < spike1.hitbox[0] + spike1.hitbox[2]:
-          enemy.hit
+
 
 
     keys = pygame.key.get_pressed() #fonction qui recupere les touches appuyées

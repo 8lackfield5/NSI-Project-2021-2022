@@ -8,7 +8,7 @@ from Sprite.Cosmo_png import charR
 from Sprite.Cosmo_png import charL
 from VoDMap.map_config import world1_lvl3 as maplen
 from Sprite.Merchant_png import merchant, shelf
-from Sprite.Enemies import base_spike1, base_spike2
+from Sprite.Enemies import base_spike1
 
 
 
@@ -97,6 +97,8 @@ class enemy(object):
         self.walkCount = 0
         self.vel = 0
         self.hitbox = (self.x, self.y + 7, 64, 92)
+        self.image = base_spike1
+
         
 
 
@@ -106,10 +108,10 @@ class enemy(object):
             self.walkCount = 0
         
         if self.vel > 0:
-            win.blit(base_spike1[self.walkCount//3], (self.x,self.y))
+            win.blit(self.image[self.walkCount//3], (self.x,self.y))
             self.walkCount += 1
         else:
-            win.blit(base_spike2[self.walkCount//3], (self.x,self.y))
+            win.blit(self.image[self.walkCount//3], (self.x,self.y))
             self.walkCount += 1
         self.hitbox = (self.x, self.y + 7, 64, 92)
         pygame.draw.rect(win, (255,0,0), self.hitbox,2)
@@ -136,8 +138,8 @@ spike1 = enemy(505, 501, 64, 64, 402)
 class spikes(pygame.sprite.Sprite):
   def __init__(self,pos,size):
     super().__init__()
-    self.image = enemy(505, 501, 64, 64, 402)
-    self.rect = self.image.get_rect(topleft = pos)
+    #self.image = enemy(505, 501, 64, 64, 402)
+    #self.rect = self.image.get_rect(topleft = pos)
 
 
 
@@ -184,7 +186,7 @@ class Level: # creation du niveau
             tile = Tile((x,y),tile_size) 
             self.tiles.add(tile)
           if cell =='P':
-            spike1 = spikes((x - 20,y - 35), tile_size)
+            spike1 = enemy(505, 501, 64, 64, 402)
             self.spike.add(spike1)
 
 

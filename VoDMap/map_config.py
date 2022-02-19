@@ -50,7 +50,7 @@ world1_lvl3 = [ #Monde 1 Niveau 3
 '                XXX         ',
 '                            ',
 '            XXX             ',
-'                            ',
+'         C                  ',
 '        XXX           XXX   ',
 '                            ',
 '    XXX                     ',
@@ -270,45 +270,45 @@ world2_lvl5 = [ #Monde 2 Niveau 5
 world2_lvl6 = [ #Monde 2 Niveau 6
 '                            ',
 '                            ',
-'                       XX   ',
-' XX     XXX                 ',
-' XX     XXX              XX ',
-' XX                         ',
-' XX                         ',
-' XX    X          XX  XX    ',
-'       X          XX  XXX   ',
-'    XXXX  XXXXXX  XX  XXXX  ',
-'XXXXXXXX  XXXXXX  XX  XXXX  ']
+'                C           ',
+'   -E-E-       XXC          ',
+'   XXXXX     CX  X          ',
+'             X    XC        ',
+'XX         CX      X        ',
+'  X        X        XC      ',
+'   X     CX          X      ',
+'    XE--EX            XE--EX',
+'     XXXX              XXXX ']
 
 
 
 world2_lvl7 = [ #Monde 2 Niveau 7
 '                            ',
 '                            ',
-'                       XX   ',
-' XX     XXX                 ',
-' XX     XXX              XX ',
-' XX                         ',
-' XX                         ',
-' XX    X          XX  XX    ',
-'       X          XX  XXX   ',
-'    XXXX  XXXXXX  XX  XXXX  ',
-'XXXXXXXX  XXXXXX  XX  XXXX  ']
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ']
 
 
 
 world2_lvl8 = [ #Monde 2 Niveau 8
 '                            ',
 '                            ',
-'                       XX   ',
-' XX     XXX                 ',
-' XX     XXX              XX ',
-' XX                         ',
-' XX                         ',
-' XX    X          XX  XX    ',
-'       X          XX  XXX   ',
-'    XXXX  XXXXXX  XX  XXXX  ',
-'XXXXXXXX  XXXXXX  XX  XXXX  ']
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ']
 
 
 
@@ -318,12 +318,12 @@ world2_lvl8 = [ #Monde 2 Niveau 8
 bonus_lvl = [ #Niveau Bonus
 '                            ',
 '                            ',
-'                       XX   ',
-' XX     XXX                 ',
-' XX     XXX              XX ',
-' XX                         ',
-' XX                         ',
-' XX    X          XX  XX    ',
-'       X          XX  XXX   ',
-'    XXXX  XXXXXX  XX  XXXX  ',
-'XXXXXXXX  XXXXXX  XX  XXXX  ']
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ',
+'                            ']

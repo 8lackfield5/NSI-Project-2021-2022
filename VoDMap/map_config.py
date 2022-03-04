@@ -1,3 +1,6 @@
+#TO-DO: 
+
+
 ### Variables: "P" = Pique ; "M" = Marchand ; "E" = Ennemi ; "-" = Chemin d'un ennemi ; "C" = Piques cachés ; "N" = Niveau terminé
 
 demo_lvl = [ #Map démo qui a pour but de tester le personnage

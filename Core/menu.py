@@ -77,6 +77,8 @@ class MainMenu(Menu):
         self.game.curr_menu = self.game.options
       elif self.state == 'CREDITS':
         self.game.curr_menu = self.game.credits
+      elif self.state == 'QUIT':
+        self.game.curr_menu = self.game.quit
       self.run_display = False
 
 #class StartGameMenu(Menu):
@@ -133,8 +135,8 @@ class CreditsMenu(Menu):
       self.game.draw_text('Made by DADOUN Nathan and KILICOGLU-SAISON Rémi', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 10)
       self.blit_screen()
 
-#class Quit(Menu):
-
+class Quit(Menu):
+  pygame.game.quit()
 
 
 

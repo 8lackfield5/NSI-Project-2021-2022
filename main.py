@@ -30,7 +30,7 @@ tile_size = 42  #Taille des tiles (carreaux) pour les niveaux
 
 
 def import_folder(
-        path):  #fonction qui prend les srpite correspondant au touches
+        path):  # Fonction qui prend les sprite correspondant au touches
     surface_list = []
 
     for _, __, img_files in walk(path):
@@ -136,13 +136,13 @@ class Player(pygame.sprite.Sprite):
 
 ##------------------------------------##
 ##------------------------------------##
-##------SCRIPT POUR LES Enemies-------##
+##------SCRIPT POUR LES ENNEMIS-------##
 ##------------------------------------##
 ##------------------------------------##
 
 
 class Enemy(object):
-    from Sprite.enemies import base_spike1, base_spike2
+    from Sprite.enemies import  base_spike2
 
     def __init__(self, x, y, width, height, end):
         self.x = x
@@ -238,11 +238,11 @@ class Level:  # creation du niveau
                     tile = Tile((x, y), tile_size)
                     self.tiles.add(tile)
                 if cell == 'P':
-                    spike1 = Spikes((x - 20, y - 35), tile_size, 23, 23)
+                    spike1 = Spikes((x - 20, y - 8), tile_size, 23, 23)
                     self.spike.add(spike1)
                     self.hitbox_list.append(pygame.Rect(
-                        x - 8, y - 23, 75,
-                        92))  #creer une liste des hitbox de tout les enemies
+                        x - 18, y + 2, 36,
+                        42))  #creer une liste des hitbox pour tout les enemies 
                 if cell == 'C':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
@@ -285,11 +285,8 @@ class Level:  # creation du niveau
 
         #enemy
         self.spike.draw(self.display_surface)
-        for hitboxes in self.hitbox_list:  #on prend chaque element de la list est creer sa hitbox sur la fenetre
-            if player.rect.y - player.rect[3] < hitboxes[1] + hitboxes[
-                    3] and player.rect.y + player.rect[3] > hitboxes[1]:
-                if player.rect.x + player.rect[3] > hitboxes[
-                        0] and player.rect.x < hitboxes[0] + hitboxes[2]:
+        for hitboxes in self.hitbox_list: #on prend chaque element de la list est creer sa hitbox sur la fenetre
+            if player.rect.colliderect(hitboxes) == True:
                     player.rect.x = 45
                     player.rect.y = 25
 

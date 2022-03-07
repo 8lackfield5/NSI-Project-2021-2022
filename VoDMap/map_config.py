@@ -1,304 +1,304 @@
-#TO-DO: 
+### Variables: "X" = Tile ; "H" = Tile cachée ; "L" = Pièce (pickup --> +10 coins, par exemple) ; "P" = Pique ; "M" = Marchand ; "E" = Ennemi ; "-" = Chemin d'un ennemi ; "C" = Piques cachés ; "N" = Niveau terminé
 
+map_list = [
 
-### Variables: "P" = Pique ; "M" = Marchand ; "E" = Ennemi ; "-" = Chemin d'un ennemi ; "C" = Piques cachés ; "N" = Niveau terminé
-
-demo_lvl = [ #Map démo qui a pour but de tester le personnage
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'              XXX            N',
-'                    XXX      N',
-'          XXX                N',
-'                     XXX     N',
-'      XXXXXXXXXXPPPPPXXXXXXXXX',
+[ #Map démo qui a pour but de tester le personnage
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXX        XXXXXXXXXX',
+'XXXXXXX                  HH LX',
+'XXXXXX        XXX         H XX',
+'XXXXX               XXX   XXXX',
+'XXX       XXX              XXX',
+'X                    XXX     N',
+'XS     XXXXXXXXXPPPPPXXXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
-
-world1_lvl1 = [ #Monde 1 Niveau 1 (Il y a 8 niveaux par monde)
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'                    XX       N',
-'                  XXXXXXX    N',
+[ #Monde 1 Niveau 1 (Il y a 8 niveaux par monde)
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXX              XXXXXXXX',
+'XXXX                      XXXX',
+'X                           XX',
+'X                  XX        N',
+'XS        PP      XXXXXXX    N',
 'XXXXXXPPXXXXXXXXPPXXXXXXXXXXXX',  ### Placer des piques dans les cases "P"
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
+
+
+[ #Monde 1 Niveau 2
+'                             N',
+'                             N',
+'                             N',
+'                             N',
+'             CC              N',
+'                             N',
+'         XXX                 N',
+'   XXXX                XX    N',
+'S                  XX  XXX   N',
+'XXPPPPPPPPPPXXXXXPPXXPPXXXX  N', ### "P"
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 
-world1_lvl2 = [ #Monde 1 Niveau 2
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'        XXX                 N',
-'  XXXX                XX    N',
-'S                 XX  XXX   N',
-'XPPPPPPPPPPXXXXXPPXXPPXXXX  N', ### "P"
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+[ #Monde 1 Niveau 3
+'X                            X',
+'X                XXX         X',
+'X                            N',
+'X            XXX             N',
+'X                            X',
+'X        XXX           XXX   X',
+'X                            X',
+'X    XXX                     X',
+'X                            X',
+'XS XPPPPPPPPPPPPPPPPPPPPPXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
-
-world1_lvl3 = [ #Monde 1 Niveau 3
-'                            N',
-'                XXX         N',
-'                            N',
-'            XXX             N',
-'         C                  N',
-'        XXX           XXX   N',
-'                            N',
-'    XXX                     N',
-'                            N',
-'  XPPPPPPPPPPPPPPPPPPPPPXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
-
-world1_lvl4 = [ #Monde 1 Niveau 4
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'      XXX                   N',
-'                    XXX     N', ### Placer un ennemi dans la case "E"
-'  XXXX---------E---XXXXX    N', ### Les cases "-" representent la zone de mouvement de l'ennemi
-'XXXXXXXXXXXXXXXXXXXXXXXXPPXXX', ### "P"
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
-
-
-
-
-merchant_lvl1 = [ #Monde dans lequel le personnage peut interagir avec le marchand
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'     XXX   XXXXXX           N',
-'           MMMMMM     XX    N', ### Placer le marchand dans les cases "M"
-'  XX       MMMMMM    XXXX  XX', ### "M"
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+[ #Monde 1 Niveau 4
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXHHHHHHLXXXXXXXXXXXXXXXXXXXX',
+'XHHHHH---EXXXXXX          XXXX',
+'XLHHHHXXXX                   X',
+'XXXHH                        N',
+'XXXX                         N',
+'XX     XXX                   X',
+'X                    XXX     X', ### Placer un ennemi dans la case "E"
+'XS XXXX---------E---XXXXX    X', ### Les cases "-" representent la zone de mouvement de l'ennemi
+'XXXXXXXXXXXXXXXXXXXXXXXXXPPXXX', ### "P"
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 
 
 
-
-world1_lvl5 = [ #Monde 1 Niveau 5
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                            N',
-'                 XXX        N',
-'    XX                      N',
-'X-----E-X   XXXX  -----E----N', ### "E" et "-"
-'XXXXXXXXXPP      PPXXXXXXXXXX', ### "P"
-'XXXXXXXXXXXPPPPPPXXXXXXXXXXXX'] ### "P"
-
-
-
-world1_lvl6 = [ #Monde 1 Niveau 6
-'                            N',
-'                            N',
-'                            N',
-'                 ---E--     N',
-'          XX     XXXXXX     N',
-'                            N',
-'            XXXX            N',
-'                  X    X    N',
-'  CC  CC XXXCCCCCCCCCCCCCX  N', ### Placer des piques cachés dans les cases "C"
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
-
-world1_lvl7 = [ #Monde 1 Niveau 7
-'                            N',
-'                            N',
-' CC                         N',
-' XX     XXXX                N',
-'                            N',
-'    XXXXCCC   XX  XX  XX  XXX',
-'        XXX                  ',
-' XX                          ',
-' CCPPCCPPCCPPCCPPCCPPCCPPCCPP',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
-
-world1_lvl8 = [ #Monde 1 Niveau 8
-'                            N',
-'                            N',
-'CCCCCC                CCCCCCX',
-'XXXXXX        CXXXX   XXXXXXX',
-'         CXXXX       XX     N',
-'XC   XXXXX    CCCC X  X    XX',
-'XX            XXXX        CXX',
-'XXXC                     CXXX',
-'XXXXC               XXXXXX  N',
-'XXXXXC --E--E--E--E--E--E---N',
-'XXXXXXCXXXXXXXXXXXXXXXXXXXXX']
+[ #Monde dans lequel le personnage peut interagir avec le marchand
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXX XXX      XXXXXXXXXX',
+'XXXXXXXX    X         XXXXXXXX',
+'X                     X      N',
+'X                     X      N',
+'X     XXX   XXXXXXX          X',
+'X           MMMMMMXX   XX    X', ### Placer le marchand dans les cases "M"
+'XS XX       MMMMMMXXXXXXXX  XX', ### "M"
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 
 
 
-
-merchant_lvl2 = [ #Le marchand vends de meilleures marchandises qu'a la première rencontre
-'                            ',
-'                          XX',
-'                        XXXX',
-'                      XXXXXX',
-'                    XXXXXXXX',
-'X                 XXXXXXXXXX',
-'XX         XXXXXXXXXXXXXXXXX',
-'XXX    XX  MMMMMMXXXXXXXXXXX',
-'           MMMMMMXXXXXXXXXXX',
-'    XXXXXXXXXXXXXXXXXXXXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
+[ #Monde 1 Niveau 5
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'                             X',
+'                             X',
+'                             X',
+'                             X',
+'                  XXX        X',
+'S   XX                       N',
+'X-----E-X    XXXX  -----E----N', ### "E" et "-"
+'XXXXXXXXXPP       PPXXXXXXXXXX', ### "P"
+'XXXXXXXXXXXPPPPPPPXXXXXXXXXXXX'] ### "P"
+,
 
 
+[ #Monde 1 Niveau 6
+'                             N',
+'                             N',
+'                             N',
+'                  ---E--     N',
+'           XX     XXXXXX     N',
+'                             N',
+'             XXXX            N',
+'                   X    X    N',
+'S CC  CC XXXCCCCCCCCCCCCCX   N', ### Placer des piques cachés dans les cases "C"
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
-world2_lvl1 = [ #Monde 2 Niveau 1
-'                            ',
-'XX        C  -E---E-        ',
-'  XC     XX  XXXXXXX        ',
-'   X                XXXX    ',
-'    XC                      ',
-'     X         C    C      X',
-'      XC---E---XXPPXX--E--X ',
-'       XXXXXXXX  XX  XXXXX  ',
-'                            ',
-'                            ',
-'                            ']
+[ #Monde 1 Niveau 7
+'                             N',
+'                             N',
+' CC                          N',
+' XX     XXXX                 N',
+'                             N',
+'    XXXXCCC   XX  XX  XX  XXXX',
+'S        XXX                  ',
+'XX                            ',
+'XXXPPCCPPCCPPCCPPCCPPCCPPCCPPC',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
-
-world2_lvl2 = [ #Monde 2 Niveau 2
-'                           X',
-'    C--E--C----E---C-E-C   X',
-'   XXXXXXXXXXXXXXXXXXXXX   X',
-'  X                     X  X',
-' X                         X',
-'X         C---E---CCPCC  CXX',
-'      C XXXXXXXXXXXXXXXXXXXX',
-'    C XX                   X',
-'    XX                     X',
-'-E---------E----E----E----E-',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX']
-
-
-
-world2_lvl3 = [ #Monde 2 Niveau 3
-'                           X',
-'                           X',
-'                           X',
-'           CXXC            X',
-'         CXX  XXC          X',
-'        XX      XX         X',
-'                           X',
-'   CXX     --E-     XXC    X',
-'  XX       XXXX       XX   X',
-'--E----E----E----E----E----E',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+[ #Monde 1 Niveau 8
+'C                            X',
+'XX                           N',
+'XXXC                    CCCCCX',
+'XXXXX         CXXXX   XXXXXXXX',
+'S        CXXXX       XX      N',
+'XC   XXXXX    CCCC X  X     XX',
+'XX            XXXX         CXX',
+'XXXC                      CXXX',
+'XXXXC                 XXXXX  N',
+'XXXXXC---E-----E-----E-----E-N',
+'XXXXXXCXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 
-world2_lvl4 = [ #Monde 2 Niveau 4
-'                            ',
-'                           X',
-'                         CXX',
-'                       XXXXX',
-'   --E-----E-----E--CXXXXXXX',
-'   XXXXXXXXXXXXXXXXXXXXXXXXX',
-' XX                        X',
-'-E-----C------E--C-------  X',
-'XXXXXXXXXXXXXXXXXXXXXXXXX  X',
-'                           X',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+
+
+[ #Le marchand vends de meilleures marchandises qu'a la première rencontre
+'X                            N',
+'X                          XXX',
+'X                        XXXXX',
+'X                      XXXXXXX',
+'X                    XXXXXXXXX',
+'XX                XXXXXXXXXXXX',
+'XXX         XXXXXXXXXXXXXXXXXX',
+'XXXX   XX   MMMMMMXXXXXXXXXXXX',
+'X           MMMMMMXXXXXXXXXXXX',
+'XS   XXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 
-merchant_lvl3 = [ #Le marchand vends les meilleures marchandises du jeu 
-'                            ',
-'X                           ',
-'XX                          ',
-'XXX                         ',
-'XXXX                        ',
-'XXXXXXXXXXXX                ',
-'XXXXXXXXXXXXX              X',
-'XXXXXMMMMMM  X            XX',
-'XXXXXMMMMMM              XXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 
 
+[ #Monde 2 Niveau 1
+'S                            X',
+'XX        C  -E---E-         X',
+'XXXC     XX  XXXXXXX         X',
+'XXXX                XXXX     X',
+'XXXXX                        N',
+'XXX            C    C       XX',
+'XXX XXXC---E---XXPPXX--E---XXX',
+'XXX XXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXX XX     XXXX     XXX     XX',
+'XXX-----E--------E-------E---N',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
-world2_lvl5 = [ #Monde 2 Niveau 5
-'                           X ',
-'    ---E-----E-----E---    X ',
-'    XXXXXXXXXXXXXXXXXXX    X ',
-'   X                   X   X ',
-'  X                     XX   ',
-'     C    C    C    C       N',
-'X    XXXXXXXXXXXXXXXXXXX   XX',
-'XX                        XXX',
-'XXX                      XXXX',
-'XXXX P  P  P  P  P  P  PXXXXX',
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+
+[ #Monde 2 Niveau 2
+'X                            X',
+'X   C--E--C----E---C-E-C     X',
+'X  XXXXXXXXXXXXXXXXXXXXX     X',
+'X  X                    XX   X',
+'XSX                          X',
+'X         C---E---CCPCC  CXX X',
+'X     C X XXXXXXXXXXXXXXXXXXXX',
+'X   C XX                   XXX',
+'X   XX                      XX',
+'X-E---------E----E----E----E--N',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
+[ #Monde 2 Niveau 3
+'X                            X',
+'X                            X',
+'X                            X',
+'X          CXXC              X',
+'X        CXX  XXC            X',
+'X       XX      XX           X',
+'X                            X',
+'XSCXXXX    -E--     XXC      X',
+'XX         XXXX       XX     X',
+'--E----E----E----E----E----E-N',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
-world2_lvl6 = [ #Monde 2 Niveau 6
-'                            ',
-'                            ',
-'                C           ',
-'   -E-E-       XXC          ',
-'   XXXXX     CX  X          ',
-'             X    XC        ',
-'XX         CX      X        ',
-'  X        X        XC      ',
-'   X     CX          X      ',
-'    XE--EX            XE--EX',
-'     XXXX              XXXX ']
 
+[ #Monde 2 Niveau 4
+'X                           SX',
+'X                           XX',
+'X                         CXXX',
+'X                        XXXXX',
+'X    --E-----E-----E--CXXXXXXX',
+'X    XXXXXXXXXXXXXXXXXXXXXXXXX',
+'X  XX                        X',
+'X--E-----C------E--C-------  X',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXX  X',
+'N                            X',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
+
+
+[ #Le marchand vends les meilleures marchandises du jeu
+'XS                           X',
+'XX                           X',
+'XXX                          X',
+'XXXX                         X',
+'XXXXX                        N',
+'XXXXXXXXXXXX                 N',
+'XXXXXXXXXXXXX                X',
+'XXXXXMMMMMM  X              XX',
+'XXXXXMMMMMM                XXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
+
+
+[ #Monde 2 Niveau 5
+'X                           XX',
+'X    ---E-----E-----E---    XX',
+'X    XXXXXXXXXXXXXXXXXXX    XX',
+'X   X                   X   XX',
+'X  X                     XX  X',
+'XS    C    C    C    C       N',
+'XX    XXXXXXXXXXXXXXXXXXX   XX',
+'XXX                        XXX',
+'XXXX                      XXXX',
+'XXXXXP   P   P P   P   PXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
+
+
+[ #Monde 2 Niveau 6
+'                             X',
+'                             X',
+'                C            X',
+'   -E-E-       XXC           X',
+'   XXXXX     CXXXX           X',
+'S            XXXXXXC         X',
+'XX         CXXXXXXXX         X',
+'XXXC       XXXXXXXXXXC       X',
+'XXXX     CXXXXXXXXXXXX     C N',
+'XXXXXE--EXXXXXXXXXXXXXXE--EXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
 
 
 world2_lvl7 = [ #Monde 2 Niveau 7
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ']
+'X                     XXXXXXXX',
+'X          XXC   C    X      X',
+'X         XXXXX       H CXXXHX',
+'X        XXXXXXXCCXHHXXXXXXXHX',
+'X      CXXLLLHHHXXCCCLXXX    X',
+'X      XXXX--E-HHHXXXXXX  XXXX',
+'X     XXXXXXXXXHHHHHHHHH     N',
+'X      XXXXXXXXXXXXXXXXXXXXXXX',
+'XS  X   XX   XX   XX   XX    X',
+'XXXXX.-E----E----E----E----E--N',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 
-
+]
 
 world2_lvl8 = [ #Monde 2 Niveau 8
 '                            ',
@@ -330,3 +330,4 @@ bonus_lvl = [ #Niveau Bonus
 '                            ',
 '                            ',
 '                            ']
+

@@ -77,8 +77,6 @@ class MainMenu(Menu):
         self.game.curr_menu = self.game.options
       elif self.state == 'CREDITS':
         self.game.curr_menu = self.game.credits
-      elif self.state == 'QUIT':
-        self.game.curr_menu = self.game.quit
       self.run_display = False
 
 #class StartGameMenu(Menu):

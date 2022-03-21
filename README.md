@@ -3,13 +3,19 @@ Collaborateurs: Remi K-S et Nathan D
 
 Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwvkd-8lackfield5 ET si le premier lien ne marche pas: https://replit.com/join/xczalmmhdt-ndd7
 
-⚠ Voir "Instructions du jeu" à la fin de ce fichier README
+Le deuxième lien est le plus modifié et mis à jour entre les des deux en général.
+
+
+⚠ Voir "Instructions du jeu" à la fin de ce fichier README, les touches de controle peuvent aussi être trouvées dans le menu de VoD: Menu --> Options --> Controls
+
+
 
 # Idées de jeux sur lesquels se baser
 - Super Mario Bros. (1985)
 - Terraria
 - Pac-Man
-- Trap Adventure 2 (Impossible Game)**
+- **Trap Adventure 2 (Impossible Game)**
+
 
 
 # Idée générale: jeu Side Scroller nommé "Voyage of Death" (semblable à Trap Adventure 2)
@@ -33,7 +39,8 @@ Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwv
 - Il y aura 2 modes de difficulté dans le jeu: "Normal" et "Hardcore". Le mode "Normal" laisse le joueur la possibilité d'utiliser l'entièreté du stock du marchand (sans pénalités), le joueur a un bon nombre de coeurs et si il meurs il peut réapparaitre à des checkpoints répartis à travers le jeu. Le mode "Hardcore" donnera au joueur moins d'options d'achat au marchand, il aura moins de coeurs et si il meurs, il devra recommencer au tout début du jeu (Monde 1, Niveau 1) et quand il gagne le jeu, il sera très bien récompensé     
 - Des effets sonores et de la musique seront également présents dans le jeu
 
-*Les idées marquées en gras sont soit trop ambitieuses (pas absolument nécessaires) et ne seront peut-être pas achevées ou sont soit destinées à être modifiées*
+*Les idées marquées en gras sont soit trop ambitieuses (pas absolument nécessaires) et ne seront peut-être pas achevées ou sont destinées à être modifiées*
+
 
 
 # Planning prévisionnel général sur 15 semaines:
@@ -57,7 +64,9 @@ Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwv
 
 - ❌Semaine 13-15 (11 Mars - 18 Mars - 25 Mars): Testing du jeu, recherche de bugs et glitches ---> debugging, balancement du jeu (Equitabilité de la difficulté)
 
-# Instructions du jeu programmé (sur Replit - "FrenchRawPerformance"):
+
+
+# Instructions du jeu programmé:
 ✅ = Fini ; ❌ = Incomplet ou pas commencé
 
 ✅Pour déplacer le personnage:

@@ -33,16 +33,16 @@ map_list = [
 
 
 [ #Monde 1 Niveau 2
-'                             N',
-'                             N',
-'                             N',
-'                             N',
-'             CC              N',
-'                             N',
-'         XXX                 N',
-'   XXXX                XX    N',
-'S                  XX  XXX   N',
-'XXPPPPPPPPPPXXXXXPPXXPPXXXX  N', ### "P"
+'X                            N',
+'X                            N',
+'X                            N',
+'X                            N',
+'X            CC              N',
+'X                            N',
+'X        XXX                 N',
+'X  XXXX                XX    N',
+'XS                 XX  XXX   N',
+'XXXPPPPPPPPPPXXXXPPXXPPXXXX  N', ### "P"
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 ,
 
@@ -102,41 +102,41 @@ map_list = [
 [ #Monde 1 Niveau 5
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-'                             X',
-'                             X',
-'                             X',
-'                             X',
-'                  XXX        X',
-'S   XX                       N',
-'X-----E-X    XXXX  -----E----N', ### "E" et "-"
+'XX                           X',
+'X                            X',
+'X                            X',
+'X                            X',
+'X                 XXX        X',
+'XS   XX                      N',
+'XX----E-X    XXXX  -----E----N', ### "E" et "-"
 'XXXXXXXXXPP       PPXXXXXXXXXX', ### "P"
 'XXXXXXXXXXXPPPPPPPXXXXXXXXXXXX'] ### "P"
 ,
 
 
 [ #Monde 1 Niveau 6
-'                             N',
-'                             N',
-'                             N',
-'                  ---E--     N',
-'           XX     XXXXXX     N',
-'                             N',
-'             XXXX            N',
-'                   X    X    N',
-'S CC  CC XXXCCCCCCCCCCCCCX   N', ### Placer des piques cachés dans les cases "C"
+'X                            N',
+'X                            N',
+'X                            N',
+'X                 ---E--     N',
+'X          XX     XXXXXX     N',
+'X                            N',
+'X            XXXX            N',
+'X                  X    X    N',
+'XS CC  CCXXXCCCCCCCCCCCCCX   N', ### Placer des piques cachés dans les cases "C"
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 ,
 
 
 [ #Monde 1 Niveau 7
-'                             N',
-'                             N',
-' CC                          N',
-' XX     XXXX                 N',
-'                             N',
-'    XXXXCCC   XX  XX  XX  XXXX',
-'S        XXX                  ',
+'X                            N',
+'X                            N',
+'XCC                          N',
+'XXX     XXXX                 N',
+'X                            N',
+'X   XXXXCCC   XX  XX  XX  XXXX',
+'XS       XXX                  ',
 'XX                            ',
 'XXXPPCCPPCCPPCCPPCCPPCCPPCCPPC',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -149,12 +149,12 @@ map_list = [
 'XX                           N',
 'XXXC                    CCCCCX',
 'XXXXX         CXXXX   XXXXXXXX',
-'S        CXXXX       XX      N',
-'XC   XXXXX    CCCC X  X     XX',
-'XX            XXXX         CXX',
-'XXXC                      CXXX',
-'XXXXC                 XXXXX  N',
-'XXXXXC---E-----E-----E-----E-N',
+'XS       CXXXX       XX      N',
+'XXC  XXXXX    CCCC X  X     XX',
+'XXX           XXXX         CXX',
+'XXXXC                     CXXX',
+'XXXXXC                XXXXX  N',
+'XXXXXXC--E-----E-----E-----E-N',
 'XXXXXXCXXXXXXXXXXXXXXXXXXXXXXX']
 ,
 
@@ -181,7 +181,7 @@ map_list = [
 
 
 [ #Monde 2 Niveau 1
-'S                            X',
+'XS                           X',
 'XX        C  -E---E-         X',
 'XXXC     XX  XXXXXXX         X',
 'XXXX                XXXX     X',
@@ -201,7 +201,7 @@ map_list = [
 'X  XXXXXXXXXXXXXXXXXXXXX     X',
 'X  X                    XX   X',
 'XSX                          X',
-'X         C---E---CCPCC  CXX X',
+'XX        C---E---CCPCC  CXX X',
 'X     C X XXXXXXXXXXXXXXXXXXXX',
 'X   C XX                   XXX',
 'X   XX                      XX',
@@ -219,7 +219,7 @@ map_list = [
 'X       XX      XX           X',
 'X                            X',
 'XSCXXXX    -E--     XXC      X',
-'XX         XXXX       XX     X',
+'XXX        XXXX       XX     X',
 '--E----E----E----E----E----E-N',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
 ,
@@ -271,12 +271,12 @@ map_list = [
 
 
 [ #Monde 2 Niveau 6
-'                             X',
-'                             X',
-'                C            X',
-'   -E-E-       XXC           X',
-'   XXXXX     CXXXX           X',
-'S            XXXXXXC         X',
+'X                            X',
+'X                            X',
+'X               C            X',
+'X  -E-E-       XXC           X',
+'X  XXXXX     CXXXX           X',
+'XS           XXXXXXC         X',
 'XX         CXXXXXXXX         X',
 'XXXC       XXXXXXXXXXC       X',
 'XXXX     CXXXXXXXXXXXX     C N',
@@ -285,7 +285,7 @@ map_list = [
 ,
 
 
-world2_lvl7 = [ #Monde 2 Niveau 7
+[ #Monde 2 Niveau 7
 'X                     XXXXXXXX',
 'X          XXC   C    X      X',
 'X         XXXXX       H CXXXHX',
@@ -297,26 +297,23 @@ world2_lvl7 = [ #Monde 2 Niveau 7
 'XS  X   XX   XX   XX   XX    X',
 'XXXXX.-E----E----E----E----E--N',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX']
+,
+
+
+[ #Monde 2 Niveau 8
+'                           X',
+'                           X',
+'                           X',
+'                           X',
+'                           X',
+'  XHHXXHH                  X',
+' X                         X',
+'X   HHXX                   X',
+'   XXHHXX                HHX',
+'  XXXXHHXXXXXXXXXXXXXXXXXHHN',
+'XXXXXXXHHXXXXXXXXXXXXXXXXXXX']
 
 ]
-
-world2_lvl8 = [ #Monde 2 Niveau 8
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ',
-'                            ']
-
-
-
-
-
 
 bonus_lvl = [ #Niveau Bonus
 '                            ',

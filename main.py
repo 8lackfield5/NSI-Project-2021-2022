@@ -1,8 +1,9 @@
 import pygame
 from os import walk
 
-from Core.game import Game
+from Core.game import *
 from Sprite.cosmo import background
+from Sprite.tile import tiles
 from VoDMap.map_config import map_list as map_list
 from Sprite.merchant import merchant, shelf
 
@@ -12,14 +13,14 @@ while g.running:
     g.curr_menu.display_menu()
     g.game_loop()
 
-  
-surface = pygame.display.get_surface()  #Obtenir la surface de l'écran actuel
-ScreenWidth = 1200  #Largeur de la fenetre, pour les bords ; Valeur de base: 900 ; Sinon, remplacer avec: surface.get_width()
-ScreenHeight = 462  #Hauter de la fenetre ; Valeur de base 495 ; Sinon, remplacer avec: surface.get_height()
+#surface = pygame.display.get_surface()  #Obtenir la surface de l'écran actuel
+DISPLAY_W, DISPLAY_H = 1200, 495
 
-win = pygame.display.set_mode((900, 495))  #Ajouter pygame.FULLSCREEN après (ScreenWidth, ScreenHeight)
+win = pygame.display.set_mode(((DISPLAY_W, DISPLAY_H)))
 
-picture = pygame.transform.scale(background, (ScreenWidth, ScreenHeight))
+#win = pygame.display.set_mode((1200, 495))  #Ajouter pygame.FULLSCREEN après (ScreenWidth, ScreenHeight)
+
+picture = pygame.transform.scale(background, (DISPLAY_W, DISPLAY_H))
 tile_size = 42  #Taille des tiles (carreaux) pour les niveaux
 
 maplen = map_list[0]
@@ -118,7 +119,7 @@ class Player(pygame.sprite.Sprite):
         elif self.direction.y > 1:
             self.status = 'Stand'
         elif self.direction.x == 0 and self.direction.x == 1:
-                self.status = 'Sprite_Cosmo_L'
+            self.status = 'Sprite_Cosmo_L'
         elif self.direction.y == -0.5:
             self.status = 'Crouch'
         else:
@@ -148,7 +149,7 @@ class Player(pygame.sprite.Sprite):
 
 
 class Enemy(object):
-    from Sprite.enemies import  base_spike2
+    from Sprite.enemies import base_spike2
 
     def __init__(self, x, y, width, height, end):
         self.x = x
@@ -173,6 +174,7 @@ class Enemy(object):
             self.walkCount += 1
         self.hitbox = (self.x, self.y + 7, 64, 92)
         #pygame.draw.rect(win, (255,0,0), self.hitbox,2)
+
 
 spike1 = Enemy(505, 501, 64, 64, 402)
 
@@ -199,12 +201,8 @@ class Spikes(pygame.sprite.Sprite):
 class Tile(pygame.sprite.Sprite):  #creation du tile
     def __init__(self, pos, size):
         super().__init__()
-        self.image = pygame.Surface((size, size))
-        self.image.fill('grey')  #la couleur du tile
+        self.image = tiles[0]
         self.rect = self.image.get_rect(topleft=pos)
-
-    def update(self, x_shift):
-        self.rect.x += x_shift
 
 
 class Level:  # creation du niveau
@@ -218,7 +216,6 @@ class Level:  # creation du niveau
         self.level_number = 0
         self.maplen = []
         self.N_count = 0
-
 
     def setup_level(self, layout):
         self.S_x = 0
@@ -247,12 +244,8 @@ class Level:  # creation du niveau
                     self.S_x = x
                     self.S_y = y
 
-
-
-
-
                 if cell == 'N':
-                    self.N_hitbox_list.append(pygame.Rect(x,y,1,1))
+                    self.N_hitbox_list.append(pygame.Rect(x, y, 1, 1))
 
     def horizontal_movement_collision(self):
         player = self.player.sprite
@@ -284,7 +277,6 @@ class Level:  # creation du niveau
                     player.direction.y = 0
                     player.on_ceiling = True
 
-
     def show(self):
         player = self.player.sprite
 
@@ -293,11 +285,11 @@ class Level:  # creation du niveau
 
         #enemy
         self.spike.draw(self.display_surface)
-        for hitboxes in self.hitbox_list: #on prend chaque element de la list est creer sa hitbox sur la fenetre
+        for hitboxes in self.hitbox_list:  #on prend chaque element de la list est creer sa hitbox sur la fenetre
             #pygame.draw.rect(win, (255,0,0), hitboxes,2)
             if player.rect.colliderect(hitboxes) == True:
-                    player.rect.x = self.S_x
-                    player.rect.y = self.S_y
+                player.rect.x = self.S_x
+                player.rect.y = self.S_y
 
         # player
         self.player.draw(self.display_surface)
@@ -305,32 +297,33 @@ class Level:  # creation du niveau
         self.horizontal_movement_collision()
         self.vertical_movement_collision()
 
-
         for N_hitboxes in self.N_hitbox_list:
-            pygame.draw.rect(win, (255,0,0), N_hitboxes,2)
+            pygame.draw.rect(win, (255, 0, 0), N_hitboxes, 2)
             if player.rect.colliderect(N_hitboxes):
                 self.level_number = 4
                 self.maplen = map_list[4]
 
         return self.maplen
 
-    def game_count(self): #Fonction qui vérifie si le jouer à atteint la fin du niveau
+    def game_count(
+            self
+    ):  #Fonction qui vérifie si le jouer à atteint la fin du niveau
         player = self.player.sprite
 
         for N_hitboxes in self.N_hitbox_list:
-            pygame.draw.rect(win, (255,0,0), N_hitboxes,2)
+            pygame.draw.rect(win, (255, 0, 0), N_hitboxes, 2)
             if player.rect.colliderect(N_hitboxes):
                 self.N_count = 1
         return self.N_count
+
 
 def redrawGameWindow():  #ouvre la fenetre win avec le sprite
     pygame.display.update()
 
 
-
-
-level = Level(map_list[0], win)      # maplen = le layout de la carte ; level = Level(maplen, win)
-
+level = Level(
+    map_list[0],
+    win)  # maplen = le layout de la carte ; level = Level(maplen, win)
 
 ##------------------------------------##
 ##------------------------------------##
@@ -340,25 +333,75 @@ level = Level(map_list[0], win)      # maplen = le layout de la carte ; level = 
 
 run = True  #Boucle principale
 movement = []
+clock = pygame.time.Clock()
+font = pygame.font.Font(None, 27)
+frame_count = 0
+frame_rate = 60
+coin_sum = 0
 while run:
-
     Level_Change = level.game_count()
 
-    if Level_Change == 1: #On vérifie si le joueur a atteint la fin du niveau
+    #--------------------#
+    #------Stopwatch-----#
+    #--------------------#
+
+    total_seconds = frame_count // frame_rate
+
+    minutes = total_seconds // 60  #pour avoir les minutes totale
+
+    seconds = total_seconds % 60  #avoir les secondes totales
+
+    output_string = "Time: {0:02}:{1:02}".format(minutes,
+                                                 seconds)  #format du compteur
+    text_timer = font.render(output_string, True, (255, 255, 255))
+    win.blit(text_timer, [10, 20])
+    frame_count += 2
+    pygame.display.flip()
+
+    #--------------------#
+    #Changement de niveau#
+    #--------------------#
+
+    if Level_Change == 1:  #On vérifie si le joueur a atteint la fin du niveau
         level.N_count = 0
-        Map_Change += 1 #si oui le niveau change
-
+        Map_Change += 1  #si oui le niveau change
         level = Level(map_list[Map_Change], win)
+        coin()
+        coin_sum += coin()
+        frame_count = 0  #reset le compteur
+
+    coin_string = "Coins: {0}".format(coin_sum)
+    text_coin = font.render(coin_string, True, (255, 255, 255))
+    win.blit(text_coin, [1100, 20])
+    win.blit(
+        pygame.image.load('Sprite/Merchant_png/Coin.png').convert_alpha(),
+        [1070, 15])
+    pygame.display.flip()
+
+    #---------------------#
+    #---System de pièces--#
+    #---------------------#
 
 
+    def coin():
+        coin_add = 2 / frame_count * (Map_Change / 0.95 * 1000)
+        money = round(coin_add)
+        return money
+
+    #---------------------#
+    #Initialisation du jeu#
+    #---------------------#
     clock.tick(30)  #fps
-    win.blit(picture, (0, 0))  # initialisation du background ; win.blit(picture, (0, 0))
+    win.blit(
+        picture,
+        (0, 0))  # initialisation du background ; win.blit(picture, (0, 0))
     level.show()  #montre le niveau dans la fenetre
     #rm.game_run()
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  #Si la fenetre se ferme ou pas
             run = False
 
     redrawGameWindow()
 
-pygame.quit()
+pygame.display.quit()

@@ -9,7 +9,7 @@ Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwv
 - Super Mario Bros. (1985)
 - Terraria
 - Pac-Man
-- Trap Adventure 2 (Impossible Game)
+- Trap Adventure 2 (Impossible Game)**
 
 
 # Idée générale: jeu Side Scroller nommé "Voyage of Death" (semblable à Trap Adventure 2)
@@ -47,9 +47,9 @@ Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwv
 
 - Rémi: Faire le plan de la carte du premier monde (Idée de projet --> 2 Mondes), faire la logique du marchand et ses marchandises
 
-- ❌Semaine 7-9 (28 Jan. - 4 Fév. - 11 Fév.): Introduire plusieurs éléments dans la base du jeu: Système monétaire (pièces d'argent), marchand, power-ups, cosmétiques
+- ✅Semaine 7-9 (28 Jan. - 4 Fév. - 11 Fév.): Introduire plusieurs éléments dans la base du jeu: Système monétaire (pièces d'argent), marchand, power-ups, cosmétiques
 
-- Nathan: Collision du personnage avec les obstacles, faire le pixel art des ennemis
+- Nathan: Collision du personnage avec les obstacles, faire le pixel-art des ennemis
 
 - Rémi: Faire tous les niveaux de chaque monde (Idée de projet --> 2 mondes), faire la logique du marchand et ses marchandises
 
@@ -67,4 +67,3 @@ Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwv
 
 ❌Pour interagir avec l'environnement:
 - Touche f ou e: 'f' ou 'e' --> Interagir (avec marchand ou autre)
-- Clique gauche de souris: 'LMB' --> Attaquer (LMB = Left Mouse Button = Boutton de Souris Gauche)

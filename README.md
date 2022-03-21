@@ -1,4 +1,4 @@
-# Projet de NSI (2021-2022): Jeu sous Python
+# Projet de NSI (2021-2022): Jeu sous Python/Pygame
 Collaborateurs: Remi K-S et Nathan D
 
 Lien de l'environnement IDE de Python en ligne: https://replit.com/join/lqrqvuwvkd-8lackfield5 ET si le premier lien ne marche pas: https://replit.com/join/xczalmmhdt-ndd7

@@ -22,8 +22,8 @@ Le deuxième lien est le plus modifié et mis à jour entre les des deux en gén
 - Ce sera un Jeu de Plates-Formes (Platformer), où le joueur doit éviter des obstacles (piques, trous, ...) sous peine de perdre des coeurs (PV ---> Points de Vie)
 - "Voyage of Death" sera inspiré et basé sur le jeu Trap Adventure 2. Voici un lien Youtube pour donner une idée visuelle du jeu envisagé: https://youtu.be/YUTzQ-A0-oA
 - **Il y aura plusieurs mondes, chacun contenant plusieurs niveaux**
-- **Chaque monde aura un thèmes different qui affectera les caracteristiques du personnage selon l'environnement, ces caractéristiques seront apliquées sur tout les niveaux de chaque monde**
-- Une fois arrivé à la fin de tout les mondes sans mourir (sans avoir perdu tous les coeurs), le joueur à gagné le jeu 
+- **Chaque monde aura un thème différent qui affectera les caracteristiques du personnage selon l'environnement, ces caractéristiques seront apliquées sur tout les niveaux de chaque monde**
+- Une fois arrivé à la fin de tout les mondes sans mourrir (sans avoir perdu tous les coeurs), le joueur à gagné le jeu 
 - Les obstacles peuvent être statiques ou **mobiles, les obsacles peuvent aussi apparaitre en dehors de l'écran**
 - **Le personnage sera customisable, differents cosmetiques, (couleurs, ...)**
 - **Il y aura un ou plusieurs niveau ou le personnage sera dans l'eau**

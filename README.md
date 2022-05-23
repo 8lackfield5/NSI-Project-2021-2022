@@ -62,6 +62,8 @@ Le deuxième lien est le plus modifié et mis à jour entre les des deux en gén
 
 
 # Instructions du jeu programmé:
+Pour commencer le jeu, il suffit de cliquer sur la croix qui est supposée fermer la fenetre et cliquer avec la souris sur la fenetre, puis appuyer sur 'Entrer' quand le curseur du jeu est sur le bouton 'Start Game'.
+
 ✅ = Fini ; ❌ = Incomplet ou pas commencé
 
 ✅Pour déplacer le personnage:
@@ -69,5 +71,5 @@ Le deuxième lien est le plus modifié et mis à jour entre les des deux en gén
 - Barre d'Espace: ' ' --> Sauter (On pourra peut-être utiliser '↑' pour sauter)
 - Flèche basse: '↓' --> S'accroupir
 
-❌Pour interagir avec l'environnement:
-- Touche f ou e: 'f' ou 'e' --> Interagir (avec marchand ou autre)
+✅Pour interagir avec l'environnement:
+- Touche o: 'o' --> Interagir (avec marchand ou autre)

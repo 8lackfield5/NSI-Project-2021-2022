@@ -97,7 +97,10 @@ class RulesMenu(Menu):
         self.run_display = False
       self.game.display.fill(self.game.BLACK)
       self.game.draw_text('RULES', 50, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 80)
-      self.game.draw_text('', 30, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2)
+      self.game.draw_text('You must reach the end of each level to finish the game.', 30, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2)
+      self.game.draw_text('Use the arrow keys and spacebar to move around.', 30, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 40)
+      self.game.draw_text('You can also purchase power-ups from the merchant when interacting with him.', 30, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 80)
+      self.game.draw_text('Watch out for enemies, spikes and hidden spikes!', 30, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 120)
       self.blit_screen()
 
 class CreditsMenu(Menu):
